@@ -32,6 +32,10 @@ print("📈 Downloading stock price data...")
 data = yf.download(tickers + ["SPY"], start=args.start, end=args.end)["Close"]
 data = data.dropna(axis=1)
 tickers = [t for t in tickers if t in data.columns]
+# Add a check to ensure tickers is not empty
+if not tickers:
+    print("❌ Error: No valid tickers found after data download. Please check your sector, top N, and date range.")
+    exit()
 
 # ----- Step 3: Initial Portfolio Setup -----
 print("💰 Constructing portfolio...")

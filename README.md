@@ -30,7 +30,7 @@ source venv/bin/activate
 pip install pandas yfinance numpy matplotlib 
 
 #example on how to run the portfolio_backtester.py script
-python portfolio_backtester.py --portfolio_type equal-weighted --start_date 2020-01-01 --end_date 2025-12-31 --initial_capital 100000 --rebalance_monthly --sector_filter Technology
+python portfolio_backtester.py --type "cap" --top "500" --sector "Health Care" --rebalance --start "2020-01-01" --end "2025-06-03" --capital "500000"
 
 #example on how to run the project1.py script
 python project1.py
